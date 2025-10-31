@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="resources/logo.png" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --slide-count: 5;
+        --duration: 30s;
+      }
+      /* Keyframes for the slideshow */
+      @keyframes slideshow {
+        0%,
+        15% {
+          transform: translateX(0);
+        }
+        /* Transition to slide 2, hold until 45% */
+        20%,
+        35% {
+          transform: translateX(calc(-1 * calc(100% / var(--slide-count))));
+        }
+        /* Transition to slide 3, hold until 70% */
+        40%,
+        55% {
+          transform: translateX(calc(-2 * calc(100% / var(--slide-count))));
+        }
+        /* Transition to slide 4, hold until 95% */
+        60%,
+        75% {
+          transform: translateX(calc(-3 * calc(100% / var(--slide-count))));
+        }
+        /* Transition to slide 5, hold until 95% */
+        80%,
+        95% {
+          transform: translateX(calc(-4 * calc(100% / var(--slide-count))));
+        }
+        /* Return to slide 1 */
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+
+    <title>LGBTQ - Topics & Issues</title>
+    <!-- Change: Title -->
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div id="header-main">
+        <img src="resources/logo.png" />
+        <span class="text">LGBTQ</span>
+      </div>
+      <div id="header-nav">
+        <!-- <div>
+          <a href="../index.html">Home</a>
+          <a href="../clubs.html">Clubs</a>
+          <a href="../Sports club.html">Sports</a>
+          <a href="../Senior High School Webpage.html">Senior High</a>
+        </div> -->
+      </div>
+    </header>
+
+    <div class="slider-container" style="--order: 0">
+      <div class="slider">
+        <div class="slides">
+          <!-- Slide 1 -->
+          <div class="slide">
+            <img
+              src="https://www.americanprogress.org/wp-content/uploads/sites/2/2021/03/GettyImages-1174493827.jpg?w=1040"
+              alt="Slide 1"
+            />
+          </div>
+          <!-- Slide 2 -->
+          <div class="slide">
+            <img
+              src="https://fortune.com/img-assets/wp-content/uploads/2024/06/GettyImages-1264592355-e1718321783487.jpg?w=1440&q=90"
+              alt="Slide 2"
+            />
+          </div>
+          <!-- Slide 3 -->
+          <div class="slide">
+            <img src="https://cdn-ikpohlh.nitrocdn.com/RSSpkKogaUjKPjbPARkILZctkAppUvmZ/assets/images/optimized/rev-0110ac4/florinroebig.com/wp-content/uploads/2020/01/lgbtq-discrimination-1170x670.jpg" alt="Slide 3" />
+          </div>
+          <!-- Slide 4 -->
+          <div class="slide">
+            <img src="https://www.gao.gov/assets/styles/main_uncropped_1x/public/2022-06/Pride%20flag%20with%20people%20.jpg.webp?itok=kYZQo6wf" alt="Slide 4" />
+          </div>
+          <!-- Slide 5 -->
+          <div class="slide">
+            <img src="https://pulitzercenter.org/sites/default/files/styles/435x275/public/inline-images/queer%20filipinos%204.jpg.webp?itok=ZQvNTRf0" alt="Slide 5" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- body -->
+    <div class="container">
+      <div class="sidebar">
+        <nav class="main">
+          <!-- Side navigation -->
+          <a href="index.html" style="--order: 0">Home</a>
+          <a href="topics.html" style="--order: 1">Topics & Issues</a>
+          <a href="stories.html" style="--order: 2">Stories</a>
+          <a href="about.html" style="--order: 3">About</a>
+        </nav>
+      </div>
+
+      <div class="main">
+        <article>
+          <h1>Issues Surrounding LGBTQ</h1>
+          <!-- Activities -->
+          <section class="card-container">
+            <a href="#discrimination"><div class="card">
+              <img
+                src="https://www.udel.edu/udaily/2018/march/bullying-stigma-based-research/_jcr_content/udaily_Image.coreimg.jpeg/1520464480108/bullying-lead.jpeg"
+                alt="discrimination"
+              />
+              <h2>Discrimination</h2>
+              <p>Despite significant strides toward equality, the LGBTQ+ community still faces pervasive discrimination in everyday settings, from the workplace and housing to healthcare and public spaces. This systemic prejudice is often fueled by ignorance, unfounded beliefs, and deeply ingrained societal biases. For LGBTQ+ individuals, this can manifest as verbal harassment, exclusion from social circles, and even physical or sexual assault.</p>
+            </div></a>
+
+            <a href="#rights"><div class="card">
+              <img
+                src="https://media.cnn.com/api/v1/images/stellar/prod/171114172828-lgbt-flag-tease.jpg?q=x_4,y_219,h_2420,w_4300,c_crop/h_653,w_1160/f_avif"
+                alt="rights"
+              />
+              <h2>Legal Rights</h2>
+              <p>The fight for LGBTQ+ rights has been defined by ongoing legal battles to secure equal protections under the law. Historically, many jurisdictions have had discriminatory laws that marginalized LGBTQ+ people, subjecting them to unjust arrests, unequal treatment, and denial of basic human rights. Key moments, such as the Stonewall Riots of 1969, served as catalysts for the modern gay rights movement, pushing for legal recognition and reform.</p>
+            </div></a>
+
+            <a href="#treatment"><div class="card">
+              <img
+                src="https://content.presspage.com/uploads/2170/1920_brokenlgbtqheart.jpeg?10000"
+                alt="treatment"
+              />
+              <h2>Treatment</h2>
+              <p>Mental health is another crucial aspect. Rejection and stigma increase the risk of depression, anxiety, and self-harm among LGBTQ+ youth. Support networks, counseling services, and affirming environments can significantly improve well-being and resilience.</p>
+            </div></a>
+          </section>
+
+          <h1 id="discrimination">Discrimination</h1>
+          <section>
+            <p>
+              Discrimination against the LGBTQ+ community remains a persistent global issue despite growing awareness and advocacy for equality. While many societies have made significant strides toward acceptance, prejudice based on sexual orientation and gender identity continues to affect people in education, employment, healthcare, and public life.
+            </p>
+            <p>
+              LGBTQ+ individuals face both overt and subtle forms of discrimination. In schools, bullying and exclusion can cause psychological harm and discourage academic engagement. In the workplace, bias may appear through unequal pay, lack of promotion opportunities, or even dismissal due to one’s identity. Transgender people, in particular, often experience extreme discrimination—ranging from misgendering to being denied access to basic facilities.
+            </p>
+            <p>
+              Social stigma is also a major factor. Media portrayals, religious condemnation, and cultural traditions sometimes reinforce harmful stereotypes, leading to social isolation. Additionally, hate crimes targeting LGBTQ+ individuals continue to rise in many regions. The impact is profound, contributing to higher rates of depression, anxiety, and suicide within the community.
+            </p>
+            <p>
+              Combating LGBTQ+ discrimination requires education, empathy, and inclusive policies. Awareness campaigns, anti-bullying programs, and workplace diversity training can promote acceptance. Most importantly, laws must protect all individuals equally, regardless of gender identity or sexual orientation. Equality should not be conditional — it is a human right.
+            </p>
+          </section>
+
+          <h1 id="rights">Legal Rights</h1>
+          <section>
+            <p>
+              Legal recognition of LGBTQ+ rights has improved dramatically over the past few decades. From marriage equality to anti-discrimination protections, the legal landscape continues to evolve. However, not all countries grant equal rights, and legal progress often faces backlash.
+            </p>
+            <p>
+              In many Western nations, same-sex marriage is now legal, granting couples the same rights as heterosexual partners regarding inheritance, adoption, and healthcare. However, in over 60 countries, same-sex relationships remain criminalized, with some even imposing the death penalty. These laws violate international human rights standards and perpetuate systemic violence against LGBTQ+ individuals.
+            </p>
+            <p>
+              Transgender rights are also a key legal issue. Many trans people face barriers in changing their legal documents to match their gender identity. Without proper recognition, they encounter challenges in employment, education, and healthcare access. Furthermore, “conversion therapy” — practices aimed at changing one’s sexual orientation or gender identity — remains legal in several regions, despite being condemned by medical professionals worldwide.
+            </p>
+            <p>
+              Legal equality is a cornerstone of social justice. Governments must ensure that LGBTQ+ rights are not only recognized but also enforced. Legal protection, combined with public education and community support, can help create a society where everyone can live authentically and safely.
+            </p>
+          </section>
+          
+          <h1 id="treatment">Treatment</h1>
+            <section>
+              <p>Acceptance is one of the most powerful forms of support that LGBTQ+ individuals can receive. When families, schools, and communities embrace diversity, LGBTQ+ people thrive. Unfortunately, many still encounter rejection and inadequate treatment in social and healthcare systems.</p>
+              <p>Proper treatment of LGBTQ+ individuals begins with respect. Using correct names and pronouns, avoiding assumptions, and providing safe spaces for self-expression are small but meaningful acts. In healthcare, LGBTQ+ patients often face discrimination or ignorance from providers, leading to mistrust and avoidance of medical care. Inclusive healthcare training can bridge this gap and ensure that everyone receives compassionate and informed treatment.</p>
+              <p>Mental health is another crucial aspect. Rejection and stigma increase the risk of depression, anxiety, and self-harm among LGBTQ+ youth. Support networks, counseling services, and affirming environments can significantly improve well-being and resilience.</p>
+              <p>Acceptance and understanding are the foundations of equality. Society must recognize that LGBTQ+ people deserve the same respect, care, and rights as everyone else. True progress will come not only through policy change but also through empathy and human connection.</p>
+            </section>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,562 @@
+:root {
+  /* --slide-count: 5; Number of slides. Update this if you add/remove slides */
+  /* --duration: 20s;   Total time for one full cycle */
+  --rainbow-colors: red calc(100% / 7 * 1), orange calc(100% / 7 * 2),
+    yellow calc(100% / 7 * 3), green calc(100% / 7 * 4), blue calc(100% / 7 * 5),
+    indigo calc(100% / 7 * 6), indigo calc(100% / 7 * 7);
+
+  --green1: hsla(336, 80%, 70%, 0.9);
+  --green2: hsla(336, 80%, 75%, 0.9);
+  --green3: hsla(336, 80%, 80%, 0.9);
+  --green5: hsla(336, 80%, 85%, 0.9);
+  --green6: hsla(336, 80%, 90%, 0.9);
+  --green8: hsla(336, 80%, 92%, 0.9);
+  --green9: hsla(336, 80%, 95%, 0.9);
+  --white1: #fff;
+  --white9: #5a5a5a;
+
+  --flexarticle: 5;
+  --flexnav: 1;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+* {
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  /* mobile phones */
+  #header-nav {
+    flex-direction: row-reverse;
+  }
+
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  nav.main > a {
+    display: inline;
+    font-size: 2rem;
+    min-height: 2.5rem;
+    max-height: 2.5rem;
+    line-height: 2rem;
+  }
+
+  nav.main > img {
+    display: inline;
+  }
+
+  nav.main > .contents {
+    background-color: darkgray;
+    position: absolute;
+    display: none;
+  }
+
+  nav.main > img:hover ~ .contents {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #header-nav {
+    flex-direction: row-reverse;
+  }
+
+  #header-nav a {
+    font-size: 3rem;
+  }
+
+  .banner h1 {
+    font-size: 3.5rem;
+  }
+
+  nav.main {
+    position: sticky;
+    position: -webkit-sticky;
+    margin-right: 10px;
+    top: 0px;
+  }
+
+  nav.main a {
+    font-size: 2.5rem;
+    min-height: 3.5rem;
+    max-height: 3.5rem;
+    line-height: 3rem;
+  }
+
+  .sidebar {
+    margin-right: 10px;
+    box-shadow: gray 0px 5px 5px 2.5px;
+  }
+
+  .testimonials ~ section > div {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 3fr 1fr;
+  }
+
+  footer iframe {
+    transform: translateX(calc(1rem / 2));
+  }
+}
+
+/* default */
+
+a {
+  text-decoration: unset;
+  color: unset;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--white1);
+  align-content: center;
+
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  max-height: 150px;
+}
+
+#header-main {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#header-main img {
+  display: block;
+  position: relative;
+  margin-left: 0.5rem;
+  height: 15vh;
+  max-height: 100px;
+  float: inline-start;
+}
+
+#header-main > span.text {
+  align-self: center;
+  max-width: 50%;
+  text-wrap-style: pretty;
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--rainbow-colors));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#header-nav {
+  display: flex;
+  padding-right: 1rem;
+  height: 5vh;
+  font-size: 1rem;
+  background: linear-gradient(to right, var(--green2), var(--green5));
+}
+
+#header-nav > div {
+}
+
+#header-nav a {
+  font-size: inherit;
+  line-height: 5vh;
+  color: white;
+  transition: all 0.2s ease;
+  padding: 0px 5px;
+}
+
+#header-nav a:hover {
+  font-size: 1.75rem;
+  color: var(--green9);
+}
+
+header img {
+  display: block;
+  position: absolute;
+  size: auto;
+  margin-left: 1rem;
+  height: calc(20vh - 1.5rem);
+  float: inline-start;
+}
+
+div.banner {
+  margin: 0px;
+  height: 30vh;
+  overflow: hidden;
+
+  background-image: url(https://cdn.britannica.com/89/183089-050-E869DBE2/Silhouettes-People-Holding-Gay-Pride-Symbol-Flag.jpg?w=300);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 60%;
+  background-repeat: no-repeat;
+}
+
+.banner h1 {
+  background-color: #00000073;
+  text-wrap-style: balance;
+  color: var(--white1);
+  text-align: center;
+  align-content: center;
+  height: 100%;
+  size: 100%;
+  margin: 0px;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+
+  animation-name: on-load-fade;
+  animation-duration: calc(var(--order) * 0.5s + 1.5s);
+  animation-delay: 0s;
+}
+
+.container {
+  display: flex;
+  background-color: var(--white1);
+  max-width: 100%;
+  background-image: linear-gradient(180deg, var(--rainbow-colors));
+}
+
+div.container nav.main a {
+  display: block;
+  padding: 5px 5px 5px 3vw;
+  transition: all 0.2s ease;
+  text-wrap-style: balance;
+
+  animation-name: on-load-appear-X;
+  animation-duration: calc(var(--order) * 0.25s + 0.5s);
+  animation-delay: 0s;
+}
+
+nav.main > a:first-child {
+  background-color: var(--green2) !important;
+  color: var(--white1);
+}
+
+nav.main a:hover,
+nav.main a:focus {
+  background-color: var(--green3) !important;
+  color: var(--green8);
+  transform: scale(1.05);
+  box-shadow: #a9a9a9a9 -10px 5px 3px 3px;
+}
+
+nav.main {
+  nav-index: 1;
+  height: fit-content;
+  padding: 0px;
+  margin: 0px;
+  min-width: 100%;
+}
+
+.sidebar {
+  min-height: 100%;
+  padding: 0px;
+  background-color: hsla(0, 0%, 83%, 0.9);
+  min-width: calc(25% - 10px);
+}
+
+div.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+article h1 {
+  margin: 0px;
+  box-sizing: border-box;
+  min-height: 3.5rem;
+  font-size: calc(3.5rem - 10px);
+  overflow: hidden;
+  padding: 5px;
+  background: linear-gradient(to right, var(--green2), var(--green5));
+  color: var(--white1);
+
+  animation-name: on-load-appear-Y;
+  animation-duration: calc(var(--order) * 0.25s + 1.5s);
+  animation-delay: 0s;
+}
+
+article h1 img {
+  height: calc(3rem - 10px);
+  float: inline-start;
+  margin-right: 5px;
+}
+
+section {
+  font-size: 1rem;
+  /* box-shadow: inset 0px 0px 10px 5px gray; */
+
+  box-shadow: 0px 5px 10px 1px grey;
+  background-color: hsla(0, 0%, 83%, 0.85);
+  padding: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  min-height: 200px;
+
+  animation-name: on-load-appear-Y;
+  animation-duration: calc(var(--order) * 0.5s + 1.5s);
+  animation-delay: 0s;
+}
+
+section * {
+  font-size: 1.2rem;
+}
+
+section p:first-child {
+  margin-top: 0px;
+}
+
+section::first-letter {
+  font-size: 3rem;
+}
+
+article {
+  color: var(--white9);
+}
+
+article img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+img.right {
+  float: right;
+  padding-left: 5%;
+  border-left: var(--green3) 3px solid;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  height: 75vh;
+  background-image: url(resources/cropbanner.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+footer > div {
+  background-color: #00000073;
+  display: grid;
+  grid-template-rows: repeat(auto-fit);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  color: lightgray;
+  height: 100%;
+  padding: 1rem;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+footer > div > * {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+footer > div > span > h1 {
+  font-size: 2rem;
+  text-wrap-style: pretty;
+  padding-bottom: 10px;
+  border-bottom: var(--green3) 3px solid;
+}
+
+footer > div > span > p > a {
+  transition: all 0.1s ease-out;
+}
+
+footer > div > span > p > a:hover {
+  color: var(--green6);
+  text-decoration: underline;
+}
+
+footer iframe {
+  max-width: 65%;
+  height: auto;
+  border-radius: 15px;
+  aspect-ratio: 1 / 1;
+  justify-self: center;
+  align-self: center;
+}
+
+/* The container that holds all cards */
+.card-container {
+  /* A responsive grid that wraps as needed */
+  display: grid;
+  /* auto-fill ensures the grid auto-expands horizontally,
+       minmax ensures a minimum of 300px for each column. */
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: 1rem;
+  /* Constrain overall width for large screens */
+  width: 100%;
+  /* Center items in each grid cell if narrower than max-width */
+  justify-items: center;
+}
+
+/* Each individual card */
+.card {
+  /* If you want them all the same height, you can set a fixed or min-height.
+       For example: min-height: 450px; (commented out below) */
+  /* min-height: 450px; */
+  display: flex;
+  flex-direction: column;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: gray 0px 0px 10px 0px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%; /* ensures it takes full width of the grid cell (up to 300px min) */
+  max-width: 275px; /* optional: to limit how wide a card can get */
+  transition: all 0.3s ease-out;
+
+  animation-name: on-load-appear-Y;
+  animation-duration: calc(var(--order) * 0.5s + 1.5s);
+  animation-delay: 0s;
+}
+
+/* Image styling */
+.card img {
+  width: 100%;
+  /* Add a transition so the zoom effect is smooth */
+  transition: transform 0.3s ease;
+  object-fit: cover; /* ensures the image covers the entire area */
+}
+
+/* Zoom on hover */
+.card:hover > img,
+.card:focus > img {
+  transform: scale(1.1);
+}
+
+.card:hover,
+.card:focus {
+  transform: scale(1.025);
+  box-shadow: gray 0px 2.5px 20px 0px;
+}
+
+/* Heading and text spacing */
+.card h2 {
+  margin: 1rem;
+}
+
+.card p {
+  margin: 0 1rem 1rem;
+}
+
+/* Footer styling */
+.footer {
+  background: linear-gradient(to top, var(--green2), var(--green5));
+  color: var(--white1);
+  padding: 1rem;
+  margin-top: auto; /* pushes footer to the bottom if the card grows */
+}
+
+/* Outer slider container */
+.slider {
+  box-shadow: 0px 10px 10px 5px var(--green1);
+  justify-self: center;
+  max-height: 80vh;
+  max-width: 100%; /* Responsive width */
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+/* Container holding all slides side by side */
+.slides {
+  display: flex;
+  width: calc(var(--slide-count) * 100%);
+  height: 100%;
+  /* 
+       Using steps(4) to jump between slides.
+       Custom properties aren’t supported in steps(), so if you change --slide-count,
+       update the number in steps(4) accordingly.
+    */
+  animation: slideshow var(--duration) infinite;
+}
+
+/* Each slide occupies an equal portion of the slides container */
+.slide {
+  flex: 0 0 calc(100% / var(--slide-count));
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.slider-container {
+  width: 100%;
+  background-image: linear-gradient(90deg, var(--rainbow-colors));
+  box-shadow: inset 0px 0px 10px 5px var(--green5);
+
+  animation-name: on-load-fade;
+  animation-duration: calc(var(--order) * 0.5s + 1.5s);
+  animation-delay: 0s;
+}
+
+@keyframes on-load-appear-Y {
+  from {
+    opacity: 0;
+    transform: translateY(50vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes on-load-appear-X {
+  from {
+    opacity: 0;
+    transform: translateX(-50vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes on-load-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
